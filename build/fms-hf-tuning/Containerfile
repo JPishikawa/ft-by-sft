@@ -1,0 +1,4 @@
+FROM quay.io/modh/fms-hf-tuning:main
+USER 0
+RUN pip install aim liger-kernel
+USER tuning
