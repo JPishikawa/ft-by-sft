@@ -19,11 +19,14 @@ spec:
       containers:
         - name: aim
           image: 'docker.io/aimstack/aim:latest'
+          command:
+            - /bin/sh
+            - '-c'
           args:
-          - "up"
-          - "--host"
-          - "0.0.0.0"
+            - aim server & aim up --host 0.0.0.0
           ports:
             - containerPort: 43800
+              protocol: TCP
+            - containerPort: 53800
               protocol: TCP
           imagePullPolicy: IfNotPresent
